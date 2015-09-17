@@ -1,4 +1,4 @@
-# school-portfolio-website
+# (School) Portfolio website
 Made for school: Portfolio website with editor
 
 This website was the first project I made at school.
