@@ -1,0 +1,617 @@
+/* Global CSS */
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	font-family: 'Open Sans', Verdana, sans-serif;
+	font-size: 12px;
+	background-color: #E9E9E9;
+	color: #212121;
+}
+
+body.dragging{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body a{
+	color: #FA6900;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+body a:hover{
+	text-decoration: underline;
+}
+
+body iframe{
+	display: block;
+	border: 0;
+	width: 100%;
+}
+
+body .clear{
+	clear: both;
+}
+
+body div.left{
+	float: left;
+}
+
+body div.right{
+	float: right;
+}
+
+/* Cookies */
+body div#cookie{
+	height: 60px;
+	width: 100%;
+	border-bottom: 5px solid #CCCCCC;
+	position: fixed;
+	top: 0;
+	transition: 400ms;
+	overflow: hidden;
+	transform-origin: top;
+	transform: rotateX(90deg);
+	background: #FFFFFF url('../img/cookie.png') no-repeat center;
+}
+
+body div#cookie.show{
+	transform: rotateX(0deg);
+}
+
+/* Header */
+body header{
+	width: 100%;
+	text-align: center;
+	margin-bottom: -100px;
+	height: 350px;
+	background: url('../img/header.jpg') center;
+	border-bottom: 1px solid #ffc599;
+}
+
+body header #logo{
+	padding: 111px 15px;
+}
+
+body header #logo h1, body header #logo h2{
+	margin: 0;
+	color: #FFFFFF;
+	text-shadow: rgba(0, 0, 0, 0.6) 0 1px 2px;
+}
+
+body header #logo h2{
+	font-size: 12pt;
+}
+
+/* Wrapper (Columns etc.)*/
+body div.wrapper{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+body div.wrapper.content{
+	margin: 10px auto 50px auto;
+}
+
+body div.wrapper div.size-small{
+	width: 250px;
+}
+
+body div.wrapper div.size-large{
+	width: 750px;
+}
+
+/* Content boxes */
+body div.wrapper div .box{
+	position: relative;
+	margin: 10px 5px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	min-height: 20px;
+}
+
+body div.wrapper div .box:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+body div.wrapper div .box div.heading{
+	position: relative;
+	padding: 12px;
+	border-bottom: 2px solid #F38630;
+	color: #F38630;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+body div.wrapper div .box div.heading div.txt{
+	display: inline;
+	float: left;
+}
+
+body div.wrapper div .box .inner{
+	padding: 12px;
+}
+
+/* Navigation (Content boxes) */
+body div.wrapper div .box nav.inner{
+	padding: 0;
+}
+
+body div.wrapper div .box nav.inner div.item{
+	border-left: 3px solid rgba(0, 0, 0, 0);
+}
+
+body div.wrapper div .box nav.inner div.item:nth-child(odd){
+	background-color: #FDF3F2;
+}
+
+body div.wrapper div .box nav.inner div.item a{
+	text-decoration: inherit;
+	color: inherit;
+	padding: 8px;
+	display: block;
+}
+
+body div.wrapper div .box nav.inner div.item:hover{
+	border-left: 3px solid #F38630;
+}
+
+/* Table (Content boxes) */
+body div.wrapper div table.content-table{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+body div.wrapper div table.content-table tr{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+body div.wrapper div table.content-table tr td{
+	position: relative;
+	margin: 0;
+	padding: 12px;
+}
+
+body div.wrapper div table.content-table tr.heading-table td{
+	position: relative;
+	margin: 0;
+	padding: 12px;
+	border-bottom: 2px solid #F38630;
+	color: #F38630;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+body div.wrapper div table.content-table tr.inner-table:nth-child(odd) td{
+	background: #FDF3F2;
+}
+
+/* Slides (Content boxes) */
+body div.wrapper div .box div.heading.slide{
+	cursor: pointer;
+}
+
+body div.wrapper div .box div.heading.slide div.arrow{
+	width: 0;
+	height: 0;
+	float: right;
+	margin: 6px;
+
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #F38630;
+
+	transition: 400ms;
+}
+
+body div.wrapper div .box div.heading.slide div.arrow.down{
+	transform: rotate(180deg);
+}
+
+body div.wrapper div .box div.inner.slide{
+	display: none;
+}
+
+/* Columns (Content boxes) */
+body div.wrapper div .box div.column{
+	min-height: 50px;
+	width: 25%;
+	float: left;
+}
+
+body.editor div.wrapper div .box div.column{
+	/*background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));*/
+	box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+body div.wrapper div .box div.column-clear{
+	clear: both;
+}
+
+body div.wrapper div .box div.column-clear.hidden{
+	display: none;
+}
+
+/* IE9 and lower */
+header, nav, footer{
+	display: block;
+}
+
+/* Footer */
+body footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 48px;
+	margin-top: -48px;
+	background: #FFFFFF;
+	border-top: 1px solid #F38630;
+}
+
+body footer div.left, body footer div.right{
+	padding: 16px;
+}
+
+body div#login-part{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+	z-index: 1337;
+}
+
+/* Tooltip */
+body div#tooltip{
+	padding: 6px;
+	color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1338;
+	display: none;
+	pointer-events: none;
+}
+
+body div#tooltip.shown{
+	display: block;
+}
+
+/* Tooltip Notif */
+body div#tt-notif{
+	padding: 16px;
+	color: #000000;
+	background-color: rgba(255, 255, 255, 0.9);
+	position: fixed;
+	z-index: 1340;
+	display: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 22px;
+	pointer-events: none;
+}
+
+body.editor div#tt-notif{
+	top: 39px;
+}
+
+body div#tt-notif.error{
+	background-color: rgba(255, 0, 0, 0.9);
+	color: #FFFFFF;
+}
+
+body div#tt-notif.good{
+	background-color: rgba(0, 255, 0, 0.9);
+	color: #FFFFFF;
+}
+
+body div#tt-notif.info{
+	background-color: rgba(0, 0, 225, 0.9);
+	color: #FFFFFF;
+}
+
+/* Notifs */
+body div.notif{
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	transition: max-height 400ms, opacity 300ms, padding 100ms linear 300ms;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+}
+
+body div.notif.shown{
+	opacity: 1;
+	max-height: 100px;
+	padding: 7px;
+	transition: max-height 400ms, opacity 300ms;
+}
+
+body div.notif.error{
+	background-color: #e51c23;
+	color: #FFFFFF;
+}
+
+/* Editor toolbar */
+body div#editor-toolbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #FFFFFF;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+body div#editor-toolbar .item{
+	display: block;
+	padding: 12px;
+	float: left;
+	text-decoration: none;
+}
+
+body div#editor-toolbar .item:hover{
+	background-color: #FA6900;
+	color: #FFFFFF;
+}
+
+/* Editor / popups */
+body div.popup {
+	position: fixed;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	width: 280px;
+}
+
+body div.popup.fixed{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+body div.popup.full{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1339;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: none;
+}
+
+body div.popup.full div.wrapper{
+	height: 100%;
+	background-color: #FFFFFF;
+	position: relative;
+}
+
+body div.popup.full div.wrapper div.push-down{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+body.editor div.popup {
+	display: block;
+}
+
+body.editor div.popup.hidden{
+	display: none;
+}
+
+body div.popup .inner{
+	padding: 12px;
+	display: block;
+}
+
+body div.popup input.inner{
+	padding: 6px;
+	margin: 2.5%;
+	width: 95%;
+	box-sizing: border-box;
+	border: 1px solid #E9E9E9;
+}
+
+body div.popup textarea.inner{
+	padding: 6px;
+	margin: 6px;
+	width: 252px;
+	max-width: 252px;
+	height: 100px;
+	max-height: 500px;
+	border: 1px solid #E9E9E9;
+}
+
+body div.popup button{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 6px;
+	width: 50%;
+	box-sizing: border-box;
+	border: 0;
+	border-top: 2px solid #F38630;
+	background: inherit;
+	outline: 0;
+}
+
+body div.popup button.button-big{
+	width: 100%;
+}
+
+body div.popup.full button{
+	padding: 12px;
+}
+
+body div.popup.full input{
+	width: 98%;
+	margin: 1%;
+	padding: 12px;
+}
+
+body div.popup button:hover{
+	background-color: #FDF3F2;
+	cursor: pointer;
+}
+
+body div.popup button:active{
+	background-color: #E9E9E9;
+	outline: 0;
+}
+
+body div.popup .heading{
+	display: block;
+	position: relative;
+	border-bottom: 2px solid #F38630;
+	padding: 12px;
+	color: #F38630;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+body div.popup div.heading{
+	background-color: #F38630;
+	color: #FFFFFF;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+body div.popup .heading div.left{
+	margin-right: 12px;
+}
+
+body div.popup div.heading div.left{
+	padding: 1px 0;
+	font-size: 14px;
+}
+
+body div.popup div.fa.tool{
+	padding: 6px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+body div.popup div.fa.tool:hover{
+	background-color: #E9E9E9;
+}
+
+body.editor div.wrapper div div#put-content{
+	transition: 400ms;
+	margin: -20px 0;
+	padding: 20px 0;
+	height: 100%;
+	border-radius: 10px;
+	min-height: 200px;
+}
+
+body div#editor-overlay{
+	background: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	transition: 400ms;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+body div#editor-overlay.good{
+	background: rgba(0, 255, 0, 0.4);
+}
+
+body div#editor-overlay.bad{
+	background: rgba(255, 0, 0, 0.4);
+}
+
+body div#editor-overlay.edit{
+	background: rgba(255, 255, 0, 0.4);
+}
+
+body div#editor-overlay.delete{
+	background: url('../img/delete.png');
+}
+
+body.editor iframe{
+	pointer-events: none;
+}
+
+body .iframe-overlay{
+	display: none;
+}
+
+body.editor .iframe-wrapper{
+	position: relative;
+}
+
+body.editor .iframe-overlay{
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+.fa.pointer{
+	margin: 3px;
+	cursor: pointer;
+}
+
+/* Media CSS */
+@media(max-width: 1000px){
+	body div.wrapper{
+		width: 100%;
+	}
+
+	body div.wrapper.content{
+		margin: 10px 0 50px 0;
+	}
+
+	body div.wrapper div.size-small{
+		width: 100%;
+	}
+
+	body div.wrapper div.size-large{
+		width: 100%;
+	}
+
+	body div.wrapper div.left, body div.wrapper div.right{
+		float: none;
+	}
+
+	body div.wrapper div .box{
+		margin: 0;
+	}
+
+	body .cropme{
+		width: 64px;
+		height: 64px;
+	}
+
+	body iframe{
+		pointer-events: none;
+	}
+
+	body .iframe-wrapper{
+		position: relative;
+	}
+
+	body .iframe-overlay{
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: 0;
+	}
+}

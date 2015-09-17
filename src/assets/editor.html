@@ -1,0 +1,128 @@
+<!-- EDITOR HTML -->
+<div id="editor-toolbar">
+	<div class="wrapper">
+		<div class="left">
+			<a class="item" data-open="page.info">Pagina instellingen</a>
+			<a class="item" data-open="account.info">Account instellingen</a>
+			<a class="item" data-open="page.create">Pagina aanmaken</a>
+			<a class="item" data-open="page.list">Pagina lijst</a>
+		</div>
+		<div class="right">
+			<a class="item" data-open="auth.logout">Uitloggen</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<div id="editor-tools" class="popup">
+	<div class="heading">
+		<div class="left">Bewerkings gereedschappen</div>
+		<div class="fa fa-arrows-alt pointer right" data-draggable="true" data-dragparent="#editor-tools" data-dragdirection="all"></div>
+		<div class="clear"></div>
+	</div>
+	<div class="inner">
+		<div data-tooltip="Content vak" data-type="box" draggable="true" class="tool left fa fa-2x fa-file"></div>
+		<div data-tooltip="Tekstvlak voor in content" data-type="inner" draggable="true" class="tool left fa fa-2x fa-align-justify"></div>
+		<div data-tooltip="Website frame voor content" data-type="iframe" draggable="true" class="tool left fa fa-2x fa-list-alt"></div>
+		<div data-tooltip="Titel voor content" data-type="heading" draggable="true" class="tool left fa fa-2x fa-font"></div>
+		<div data-tooltip="Kolommen vlak" data-type="columns" draggable="true" class="tool left fa fa-2x fa-columns"></div>
+
+		<div class="clear"></div>
+	</div>
+	<div class="inner">
+		<div data-tooltip="Item bewerken" data-type="edit" draggable="true" class="tool left fa fa-2x fa-pencil-square-o"></div>
+		<div data-tooltip="Item verwijderen" data-type="delete" draggable="true" class="tool left fa fa-2x fa-trash"></div>
+	</div>
+</div>
+
+<div id="editor-block-data" class="popup hidden">
+	<div class="heading">
+		<div class="left">Element instellingen</div>
+		<div class="fa fa-arrows-alt pointer right" data-draggable="true" data-dragparent="#editor-block-data" data-dragdirection="all"></div>
+		<div class="clear"></div>
+	</div>
+
+	<form id="editor-block-data-form">
+		<div id="editor-block-data-form-content"></div>
+
+		<button type="submit">Opslaan</button>
+		<button type="reset">Annuleren</button>
+	</form>
+</div>
+
+<div id="editor-page-info" class="popup hidden">
+	<div class="heading">
+		<div class="left">Pagina instellingen</div>
+		<div class="fa fa-arrows-alt pointer right" data-draggable="true" data-dragparent="#editor-page-info" data-dragdirection="all"></div>
+		<div class="clear"></div>
+	</div>
+
+	<form id="editor-page-info-form">
+		<label class="heading" for="page-caption">Pagina naam</label>
+		<input class="inner" id="page-caption" type="text" placeholder="Startpagina" />
+
+		<label class="heading" for="page-url">Pagina link</label>
+		<input class="inner" id="page-url" type="text" placeholder="index" />
+
+		<button type="submit">Opslaan</button>
+		<button type="reset">Annuleren</button>
+	</form>
+</div>
+
+<div id="editor-page-create" class="popup hidden full">
+	<div class="wrapper">
+		<div class="heading">
+			<div class="left">Pagina aanmaken</div>
+			<div class="clear"></div>
+		</div>
+
+		<form id="editor-page-create-form" class="wrapper">
+			<label class="heading" for="pagec-caption">Pagina naam</label>
+			<input class="inner" id="pagec-caption" type="text" placeholder="Startpagina" />
+
+			<label class="heading" for="pagec-url">Pagina link</label>
+			<input class="inner" id="pagec-url" type="text" placeholder="index" />
+
+			<div class="push-down">
+				<button type="submit">Opslaan</button>
+				<button type="reset">Annuleren</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="editor-page-list" class="popup hidden full">
+	<div class="wrapper">
+		<div class="heading">
+			<div class="left">Pagina overzicht</div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="page-list-list"></div>
+	</div>
+</div>
+
+<div id="editor-account-info" class="popup hidden">
+	<div class="heading">
+		<div class="left">Account instellingen</div>
+		<div class="fa fa-arrows-alt pointer right" data-draggable="true" data-dragparent="#editor-account-info" data-dragdirection="all"></div>
+		<div class="clear"></div>
+	</div>
+
+	<form id="editor-account-info-form">
+		<label class="heading" for="account-username">Gebruikersnaam</label>
+		<input class="inner" id="account-username" type="text" />
+
+		<label class="heading" for="account-password">Wachtwoord</label>
+		<input class="inner" id="account-password" type="password" />
+
+		<label class="heading" for="account-password-current">Huidige wachtwoord</label>
+		<input class="inner" id="account-password-current" type="password" />
+
+		<button type="submit">Opslaan</button>
+		<button type="reset">Annuleren</button>
+	</form>
+</div>
+
+<div id="editor-overlay"></div>
+<!-- /EDITOR HTML -->
